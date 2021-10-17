@@ -1,0 +1,249 @@
+$margin-top: 33px; 
+$margin-left: 40px;
+
+@mixin  text($size,$width,$lign-height) {
+    font-size: $size;
+    font-weight: $width;
+    line-height: $lign-height;
+}
+@mixin  color($color) {
+    color: $color;
+}
+
+@mixin flex($direction,$j-content){
+
+    flex-direction: $direction;
+    justify-content: $j-content;
+}
+.reg-root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+.reg-frame{
+    border: 2px solid #EDEEF0;
+    height: 624px;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 49px;
+}
+
+.reg-fundoo
+{
+    width: 20%;
+    margin: 48px 0px 0px 60px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.reg-fundoo-account{
+    margin-left: 60px;
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.fundoo{
+    @include text( 14px,640,1.5);
+   
+}
+.f
+{
+    @include color(#4285F4);
+}
+.u
+{
+    @include color(#DB4437);
+}
+.n
+{
+    @include color(#F4B400);
+}
+.d
+{    
+    @include color (#4285F4);
+}
+.o
+{
+    @include color( #0F9D58);
+}
+
+.reg-cont{
+    flex-basis: 70%;
+}
+
+.input-field{
+    width:100%;
+}
+
+.reg-content-names{
+    display: flex;
+    @include flex(row,space-evenly);
+    margin-top: $margin-top;
+    margin-left: $margin-left;
+}
+.reg-content-username{
+    margin-top: $margin-top;
+    display: flex;
+    justify-content: center;
+    margin-left: 8%;
+    #username{
+         width: 440px;
+    }
+}
+.reg-content-security{
+    display: flex;
+    @include flex(row,space-evenly);
+    margin-top: $margin-top;
+    margin-left: $margin-left;
+}
+.message{
+    margin-left: 61px;
+}
+.show-checkbox{
+    margin-top: $margin-top;
+    margin-left: 59px;
+}
+.div-but-content{
+    
+    display: flex;
+    justify-content: space-between;
+    margin-top: 11%;
+    .Text{
+        margin-left: 61px;
+        color:blue;
+        font-weight: 700;
+    }
+    .button{
+        margin-right:30px;
+    }
+}
+.logo-cont{
+    flex-basis: 30%;
+    margin: 16% 2% 0% 2%;
+}
+.fig-caption{
+    font-size: 16px;
+    font-weight: 300;
+    text-align:center;
+}
+.Text-Redirect{
+    cursor: pointer;
+}
+@media screen and (max-width: 650px) {
+    .logo-cont{
+       display:none;
+    }
+    .input-field {
+        width: 111%;
+    }
+}
+@media screen and (max-width: 650px) {
+    .logo-cont{
+       display:none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .reg-content-names {
+        display: flex;
+        flex-direction: column;
+        height:104px;
+        justify-content: space-between;
+    }
+    .reg-content-security {
+        display: flex;
+        flex-direction: column;
+        height:104px;
+        justify-content: space-between;
+    }
+    .input-field {
+        width: 96%;
+    }
+    .show-checkbox{
+        margin-top: 20px;
+    margin-left: 31px;
+}
+.reg-frame {
+    
+    height: 660px;
+}
+.div-but-content {
+    margin-top: 15%;
+    .Text{
+        margin-left: 8%;
+    }
+}
+.message{
+    margin-left: 8%;
+}
+}
+@media screen and (max-width: 485px) {
+    .reg-frame {
+        height: 670px;
+    }
+    .input-field {
+        width: 88%;
+    }
+}
+
+ @media screen and (max-width: 425px) {
+    .input-field {
+        width: 84%;
+        margin-left: 4%;
+    }  
+    .message{
+        margin-left: 9%;
+    }
+    .reg-content-username{
+        margin-left: 9%;
+    }
+   
+}
+@media screen and (max-width: 411px) {
+
+    .reg-frame{
+        height: 800px;
+    }
+}
+@media screen and (max-width: 360px) {
+
+.reg-frame{
+    height: 750px;
+}
+.input-field {
+    width: 84%;
+    margin-left: 9%;
+}
+.reg-fundoo {
+    margin: 11% 0px 0px 19%;
+}
+.reg-fundoo-account {
+    margin-left: 19%;
+}
+.message {
+    margin-left: 11%;
+}
+.reg-content-username {
+    margin-left: 11%;
+}
+}
+
+@media screen and (max-width: 280px) {
+    .input-field {
+        width: 77%;
+    margin-left: 19%;
+}
+.reg-fundoo {
+    margin: 11% 0px 0px 28%;
+}
+.reg-fundoo-account {
+    margin-left: 28%;
+}
+}
+#helperText{
+    color:red;
+}
+.MuiFormHelperText-contained {
+    margin-left: 1px;
+    margin-right: 14px;
+}
