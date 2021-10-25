@@ -41,8 +41,8 @@ class Createnotes extends Component {
             title: "",
             note: "",
             responce: false,
-            color:"#ffffff"
-            
+            color:"#ffffff",
+            collaborators:[]
         }
 
     }
