@@ -1,0 +1,40 @@
+.icon-open-content {
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+}
+.note-icons-hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.note-icons-hover:hover {
+    background-color: #e4d9d9;
+}
+.i-disp {
+    cursor: pointer;
+    width: 18px !important;
+}
+.i-disp :hover {
+    background-color: #9e9191;
+}
+.delete-palate:hover .disp-icn {
+    display: block;
+    color: #292a2b;
+}
+.color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 15px;
+}
+.color:hover {
+    background-color: #c9cbce;
+}

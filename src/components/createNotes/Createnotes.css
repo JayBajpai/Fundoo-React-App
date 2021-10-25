@@ -1,0 +1,86 @@
+::-webkit-scrollbar {
+    display: none;
+}
+.takenote {
+    border-radius: 8px;
+    width: 534px;
+    box-shadow: 1px 3px 9px 0px #888;
+    display: flex;
+    min-height: 61px;
+}
+.input-feild {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.takenote-open {
+    max-height: 1000px;
+    padding-left: 10px;
+    min-height: 55px;
+}
+.input-feild-open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+}
+.input-title-note {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+.pin-inp {
+    height: 30px;
+}
+.inputText {
+    border: 0px;
+    font-size: 17px;
+    width: 429px;
+    padding-left: 10px;
+}
+.imgIconClose {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.icon-open {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.icon-open-content {
+    color: dimgrey;
+    width: 321px;
+}
+.icon-open-close {
+    cursor: pointer;
+    width: 12%;
+    font-weight: inherit;
+}
+@media (width: 600px) {
+    .input-feild {
+        width: 100%;
+   }
+    .inputText {
+        width: 280px;
+   }
+    .takenote {
+        width: 400px;
+   }
+    .note-disp {
+        width: 90%;
+   }
+}
+@media (width: 360px) {
+    .icon-open {
+        width: 74%;
+   }
+    .takenote {
+        width: 509px;
+        margin-left: 55px;
+   }
+}
