@@ -1,1 +1,0 @@
-export const baseURL='http://fundoonotes.incubation.bridgelabz.com/api/';
