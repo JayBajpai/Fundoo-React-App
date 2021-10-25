@@ -7,6 +7,7 @@ import MoreVertOutlinedIcon from '@material-ui/icons/MoreVertOutlined';
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import Popper from './popper';
+import Collaborators from '../Collaborators/Collaborators';
 import user_services from '../../services/userService';
 import Tooltip from '@material-ui/core/Tooltip';
 import image from '../../assests/image.svg';
@@ -167,8 +168,18 @@ fileChangedHandler = (event) => {
 
                     </div>
                 </div>
-                
+                <Collaborators
+                    open={this.state.openStatus}
+                    note={this.props.val}
+                    colaboratorFlag={this.props.colabFlag}
+                    getCloseStatus={(Data) => {
+                        this.onSetStatus(Data);
+                    }}
+
+                    getDetails ={this.props.getClose}
+                    getNotes={() =>  this.props.get } />
             </div>
+            
         );
     }
 }
