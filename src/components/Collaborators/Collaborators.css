@@ -1,0 +1,78 @@
+.collab-btn {
+    display: flex;
+    flex-direction: row-reverse;
+    cursor: pointer;
+}
+.collab-btn .collab-btn-cnt {
+    display: flex;
+    justify-content: space-around;
+    width: 220px;
+}
+.makeStyles-pop-27 {
+    position: absolute !important;
+    top: 62.8% !important;
+    left: 35% !important;
+}
+@media only screen and (max-width: 600px) {
+    .makeStyles-pop-27 {
+        top: calc(100% - 275px) !important;
+        left: calc(100% - 840px) !important;
+   }
+}
+.collab-data {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+.owner {
+    display: flex;
+}
+.avatar-img {
+    margin-left: 22px;
+    margin-top: 7px;
+}
+.name-txt {
+    font-size: 15px;
+    margin-left: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 7px;
+}
+.email-txt {
+    font-size: medium;
+    margin-left: 20px;
+}
+.collab-txt {
+    font-size: medium;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.collab-dtl {
+    display: flex;
+    align-items: center;
+    width: 530px;
+}
+.search-cnt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+.plus {
+    width: 43px;
+    height: 43px;
+    border: 2px solid #bdbdbd;
+    border-radius: 29px;
+    padding: 8px;
+    color: #bdbdbd;
+    margin-left: 20px;
+}
+.email-disp {
+    margin-left: 5px;
+}
+.on-close {
+    cursor: pointer;
+    position: absolute;
+    margin-left: 480px;
+    color: #c7afaf;
+}
