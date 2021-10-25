@@ -3,8 +3,8 @@ import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core'
 import user_services from '../../services/userService';
 import { BrowserRouter as Router, Route, Link, Navlink, Switch } from 'react-router-dom';
-import '../registration/Registration.scss';
-import './ForgetPassword.scss';
+import '../registration/Registration.css';
+import './ForgetPassword.css';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
@@ -83,16 +83,6 @@ export default class ForgetPassword extends React.Component {
                             autoHideDuration={6000}
                             onClose={this.handleClose}
                             message="EMAIL SUCCESSFULLY SENDED "
-                            action={
-                                <React.Fragment>
-                                    <Button color="secondary" size="small" onClick={this.handleClose}>
-                                        UNDO
-                                    </Button>
-                                    <IconButton size="small" aria-label="close" color="inherit" onClick={this.handleClose}>
-                                        <CloseIcon fontSize="small" />
-                                    </IconButton>
-                                </React.Fragment>
-                            }
                         />
                     </div>
                 </div>
