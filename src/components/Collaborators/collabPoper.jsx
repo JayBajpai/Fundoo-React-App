@@ -9,20 +9,21 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '3px',
         backgroundColor: 'white',
         overflow: 'scroll',
-       
         '@media(minWidth: 780px)' : {
             width: '80%'
         }
     },
     pop: {
         zIndex: "10000",
-        width: '100 %',
-        height: '100 %',
-        position: 'absolute !imp',
+        width: '100%',
+        height: '100%',
+        position: 'absolute !important',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-       
+        top: '27% !important',
+        left: '0px !important'
+        
     }
   }));
 export default function CollabPoper(props) {
@@ -40,8 +41,6 @@ export default function CollabPoper(props) {
                 height: '35px',
                 cursor: 'pointer',
                 padding: '6px',
-                 border: '1px solid #eee',
-
                 '&:hover': {
                     backgroundColor: 'grey'
                 }
@@ -56,7 +55,7 @@ export default function CollabPoper(props) {
 
     return (
         <>
-            <Popper className={classes.pop} open={props.open} anchorEl={anchorEl} transition>
+            <Popper className={classes.pop} open={props.open} anchorEl={anchorEl}>
                 <div className={classes.paper} >{props.List.map(list)}</div>
             </Popper>
         </>
