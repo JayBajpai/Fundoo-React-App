@@ -4,8 +4,9 @@ import './Collaborators.css';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 import user_services from '../../services/userService';
+
 import MenuItem from '@material-ui/core/MenuItem';
-import { MenuList } from "@material-ui/core";
+import { Button, MenuList, Popover } from "@material-ui/core";
 import CloseIcon from '@material-ui/icons/Close';
 import Tooltip from '@material-ui/core/Tooltip';
 import Avatar from '@material-ui/core/Avatar';
@@ -76,8 +77,6 @@ class Collaborators extends Component {
 
     addColaboratorCreateNote = (val) => {
 
-
-        // debugger;
         let colabDetails = [];
         let arr = [{
             "firstName": val.firstName,
@@ -87,8 +86,6 @@ class Collaborators extends Component {
         }]
 
         const formData = new FormData();
-
-        // formData.append('file', e.target.files[0].name)
         formData.append("title",  this.props.note.title);
         formData.append("description", this.props.note.note);
         formData.append("color", this.props.note.color);
@@ -115,8 +112,6 @@ class Collaborators extends Component {
 
     addColaborator(val) {
         let collaborators = val;
-        console.log("----------------------->", collaborators);
-        console.log("----------------------->", this.props.note.id);
         user_services.addCollab(collaborators, this.props.note.id).then((data) => {
             this.props.getNotes();
             this.props.getCloseStatus(false);
@@ -147,14 +142,7 @@ class Collaborators extends Component {
         )
     }
 
-    onDelete = (userId) => {
-        user_services.deleteCollab(this.props.note.id, userId).then((data) => {
-            this.props.getNotes();
-            console.log('data', data);
-        }).catch(error => {
-            console.log('searchCollab', error);
-        });
-    }
+  
 
     saveCollab = () => {
         this.props.getNotes();
@@ -190,7 +178,6 @@ class Collaborators extends Component {
                     <div className="collab-dtl">
                         <Tooltip title={name}>
                             <div style={{
-                                // backgroundColor: this.props.value.color,
                                 marginLeft: '5px',
                                 marginRight: '4px'
                             }}>
@@ -198,9 +185,7 @@ class Collaborators extends Component {
                             </div>
                         </Tooltip>
                         <span className="email-disp">{data.email}</span>
-                        <span className='on-close' >
-                            <CloseIcon onClick={() => this.onDelete(data.userId)} />
-                        </span>
+                      
                     </div>
                 </MenuItem>
             );
@@ -226,7 +211,7 @@ class Collaborators extends Component {
                         <div className="collab-details">
                             <div className="owner">
                                 <div className="avatar-img">
-                                    <Avatar alt="Jay" src="/static/images/avatar/3.jpg" />
+                                    <Avatar alt="jay" src="" />
                                 </div>
                                 <div className="owner-title">
                                     <div className="name-txt">{localStorage.getItem('first')} {localStorage.getItem('last')}  (Owner)</div>
@@ -246,25 +231,15 @@ class Collaborators extends Component {
                                     placeholder="Search"
                                     onChange={this.handleInput}
                                 />
-                                {/* <div style={{
-                                    maxHeight: "350px",
-                                    overflow: "scroll"
-                                }}> */}
+                               
                                     <CollabPoper
-                                        // className="colabpop"
+                                        
                                         id={this.state.openPopper ? 'simple-popover' : undefined}
                                         List={this.state.collabData}
                                         open={this.state.openPopper}
                                         anchorEl={this.state.anchorEl}
                                         onClose={this.handleClose}
-                                        // anchorOrigin={{
-                                        //     vertical: 'bottom',
-                                        //     horizontal: 'center',
-                                        // }}
-                                        // transformOrigin={{
-                                        //     vertical: 'top',
-                                        //     horizontal: 'center',
-                                        // }}
+                                       
                                         collabAdd={(data) => {
                                             if (this.props.colaboratorFlag === "UnChecked") {
                                                 this.addColaborator(data);
@@ -274,7 +249,7 @@ class Collaborators extends Component {
                                         }
                                         } />
 
-                               {/* / </div> */}
+                               
                                 <div className="on-close" style={{ display: this.state.cancel ? 'block' : 'none' }}>
                                     <CloseIcon onClick={this.onCancel} />
                                 </div>
