@@ -19,6 +19,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
+import Avatar from '@material-ui/core/Avatar';
 import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveRounded';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteForeverRounded';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
@@ -27,10 +28,10 @@ import EmojiObjectsIcon from '@material-ui/icons/EmojiObjectsRounded';
 import user_services from '../../services/userService'; 
 import './Header.css'
 import Createnotes from '../createNotes/Createnotes';
-
+//import Displaynotes from '../displayNotes/Displaynotes';
 import NoteMaker from '../noteMaker/NoteMaker';
 import { useEffect } from 'react';
-import Trash from '../../Pages/trash/trash'
+import Trash from '../../Pages/trash/trash';
 import Archive from '../../Pages/archive/archive';
 import {
   Switch,
@@ -275,7 +276,7 @@ export default function MiniDrawer() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          <Popover/> 
+              <Popover/>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
@@ -285,7 +286,9 @@ export default function MiniDrawer() {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-        
+                <div className="avatar">
+          <Avatar className="profilepic" alt="jay" src="" />
+          </div>
             </IconButton>
           </div>
         </Toolbar>
@@ -370,7 +373,6 @@ export default function MiniDrawer() {
                   <Trash value={notes} get={getNotes}/>
                   </div>
                   </ProtectedRoute>
-                  
                   <ProtectedRoute className={classes.sideIcon}
 									 exact path={"/dashboard/Archive"}
 										component={Archive}> 
