@@ -259,7 +259,7 @@ export default class Registration extends Component {
                     </div>
                     <div className="logo-cont">
                         <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="" />
-                        <span class="fig-caption">One account. All of Fundoo working for you.</span>
+                        <span className="fig-caption">One account. All of Fundoo working for you.</span>
                     </div>
                 </div>
             </div>
