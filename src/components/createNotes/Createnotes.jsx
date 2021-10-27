@@ -110,6 +110,8 @@ class Createnotes extends Component {
     }
 }
 
+
+
 handleInput = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -118,7 +120,7 @@ handleInput = (e) => {
 
     render() {
         const { classes } = this.props;
-        return (  
+        return (
             <>
           {this.state.open ? (
                 <div className="takenote" onClick={this.handleClick} >
