@@ -1,14 +1,11 @@
-
-
-
-.login-frame{
+.login-frame {
    
     display: flex;
     justify-content: center;
     align-items: center;
    
 }
-.login-form{
+.login-form {
     width: 380px;
     border: 2px solid #EDEEF0;
     height: 500px;
@@ -20,7 +17,7 @@
     padding: 20px;
 
 }
-.login-cont{
+.login-cont {
     height: 25%;
     width: 100%;
     display: flex;
@@ -29,27 +26,27 @@
     align-items: center;
    
 }
-.login-fundoo{
+.login-fundoo {
     font-size: 30px;
 }
-.login-input{
+.login-input {
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
     height: 250px;
 }
 
-.forget{
+.forget {
     cursor: pointer;
     color:#3583EB;
 }
 
-.Text-Cont{
+.Text-Cont {
     cursor: pointer;
     margin: 0px !important;
    
 }
-.pwdchange{
+.pwdchange {
     display: flex; 
     justify-content: space-between;
 }
