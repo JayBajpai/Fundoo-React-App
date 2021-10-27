@@ -205,6 +205,16 @@ export default class Login extends Component {
                                 autoHideDuration={6000}
                                 onClose={this.handleClose}
                                 message=" LOGIN SUCESSFUL "
+                                action={
+                                    <React.Fragment>
+                                        <Button color="secondary" size="small" onClick={this.handleClose}>
+                                            UNDO
+                                        </Button>
+                                        <IconButton size="small" aria-label="close" color="inherit" onClick={this.handleClose}>
+                                            <CloseIcon fontSize="small" />
+                                        </IconButton>
+                                    </React.Fragment>
+                                }
                             />
                         </div>
 
