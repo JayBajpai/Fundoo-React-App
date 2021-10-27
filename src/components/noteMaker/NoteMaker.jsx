@@ -1,4 +1,6 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
+import Createnotes from '../createNotes/Createnotes';
+import user_services from '../../services/userService'; 
 import Displaynotes from '../displayNotes/Displaynotes';
 import './notemaker.css'
 
@@ -17,6 +19,7 @@ note=(val)=>{
 
 
     render() {
+        // console.log(this.props.value);
         return (
             <>
             <div className="note-disp">
