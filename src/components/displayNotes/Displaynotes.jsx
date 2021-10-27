@@ -7,7 +7,7 @@ import Dialog from '@material-ui/core/Dialog';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
-// import Avatar from '@material-ui/core/Avatar';
+import Avatar from '@material-ui/core/Avatar';
 
 const styles = {
     underline: {
@@ -48,14 +48,8 @@ class Displaynotes extends Component {
 
         }).catch(error => {
             console.log('Delete error', error);
-            this.setState({
-                openStatus:false
-            })
         })
         console.log("delete", Data);
-        this.setState({
-            openStatus:false
-        })
     }
 
     onArchive = () => {
@@ -121,21 +115,21 @@ class Displaynotes extends Component {
     render() {
         const { classes } = this.props;
         
-        // const collabDetails = this.props.value.collaborators.map((data)=>{
-        // let name = data.firstName
-        // const chars = name.split('');
-        // return (
-        //     <Tooltip title={name}>
-        //     <div style={{
-        //         backgroundColor: this.props.value.color,
-        //         marginLeft:'5px',
-        //         marginRight:'4px'
-        //     }}>
-           
-        //     </div>
-        //     </Tooltip>
-        //     );
-        // });
+        const collabDetails = this.props.value.collaborators.map((data)=>{
+        let name = data.firstName
+        const chars = name.split('');
+        return (
+            <Tooltip title={name}>
+            <div style={{
+                backgroundColor: this.props.value.color,
+                marginLeft:'5px',
+                marginRight:'4px'
+            }}>
+            <Avatar alt={chars[0]} src={chars[0]} />
+            </div>
+            </Tooltip>
+            );
+        });
         return (
                 <div className="note" style={{
                     backgroundColor: this.props.value.color,
@@ -155,6 +149,7 @@ class Displaynotes extends Component {
                     :
                     <img style={{display:'none'}} />
                      }
+                          
                         <div className="title-note">
                             <div className='title-frame'>
                                 {this.props.value.title}
@@ -167,7 +162,9 @@ class Displaynotes extends Component {
                             {this.props.value.description}
                         </div>
                     </div>
-                  
+                    <div className="collab-align">
+                          {collabDetails}                  
+                    </div>
                     <div className="icon-frame">
                         <div className="disp-icn">
                             <Icons
@@ -178,6 +175,7 @@ class Displaynotes extends Component {
                                     this.onDelete();
                                 }}
                                 uploadImage={(data) => {
+                                    // this.setState({ file: data });
                                     this.addImage(data);
                                   }}
                                 colabFlag="UnChecked"
@@ -219,7 +217,7 @@ class Displaynotes extends Component {
                             backgroundColor: this.props.value.color,
                             marginRight: '4px'
                         }}>
-                                              
+                            {collabDetails}                        
                     </div>
                     <div
                         style={{
@@ -237,6 +235,7 @@ class Displaynotes extends Component {
                                     this.onDelete();
                                 }}
                                 uploadImage={(data) => {
+                                   
                                     this.addImage(data);
                                   }}
                                 colorval="update"
