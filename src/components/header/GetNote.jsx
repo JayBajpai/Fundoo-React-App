@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import user_services from '../../services/userService'; 
 import './Header.css';
 import Createnotes from '../createNotes/Createnotes';
+//import Displaynotes from '../displayNotes/Displaynotes';
 import NoteMaker from '../noteMaker/NoteMaker';
 
 class GetNote extends Component {
@@ -10,7 +11,9 @@ class GetNote extends Component {
         this.state={
             notes:[]
         }
+        // this.getNotes();
     }
+
     componentDidMount() {
         this.getNotes();
       }
