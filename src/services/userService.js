@@ -66,6 +66,7 @@ class UserService{
         let url = baseURL+'notes/updateNotes';
         return this.axios_service.post(url,data);
     }
+
     searchCollab(data) 
     {
         let url = baseURL+'user/searchUserList';
@@ -76,6 +77,17 @@ class UserService{
     {
         let url = baseURL+"notes/"+noteId+"/AddcollaboratorsNotes";
         return this.axios_service.post(url,data);
+    }
+
+    deleteCollab(noteId,collabId){
+        let url = baseURL+"notes/"+noteId+"/removeCollaboratorsNotes/"+collabId;
+        return this.axios_service.delete(url);
+    }
+
+    signOut() 
+    {
+        let url = baseURL+"user/logout";
+        return this.axios_service.post(url,{});
     }
 
 }
