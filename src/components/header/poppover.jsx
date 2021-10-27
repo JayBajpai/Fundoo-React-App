@@ -45,10 +45,10 @@ export default function SimplePopper() {
 
   return (
     <div>
-      <Avatar alt="Jay Bapai" 
+      <Avatar alt="Jay" 
         src="" 
         aria-describedby={id} type="button" onClick={handleClick}/>
-      
+     
       <Popper id={id} open={open} anchorEl={anchorEl} placement={'bottom'}>
         <div className={classes.paper}>
             <div className="profile">
