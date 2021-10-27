@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './Icons.css';
 import AddAlertOutlinedIcon from '@material-ui/icons/AddAlertOutlined';
 import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined';
+
 import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@material-ui/icons/MoreVertOutlined';
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import Popper from './popper';
-import Collaborators from '../Collaborators/Collaborators';
 import user_services from '../../services/userService';
 import Tooltip from '@material-ui/core/Tooltip';
+import Collaborators from '../Collaborators/Collaborators';
 import image from '../../assests/image.svg';
 
 class Icons extends Component {
@@ -117,8 +118,9 @@ fileChangedHandler = (event) => {
                     </div>
                     <div className="note-icons-hover">
                         <Tooltip title="Image">
-                         <label htmlFor="icon-button-photo">
-                           <input
+                          
+                            <label htmlFor="icon-button-photo">
+                            <input
                             type="file"
                             style={{ display: "none" }}
                             
@@ -127,10 +129,13 @@ fileChangedHandler = (event) => {
                             ></input>
                             <img
                             className="file"
+                            onClick={() => this.fileUpload.click()}
+                            file={() => this.fileChangedHandler}
                             src={image}
                             label="New note with image"
                             alt="new note"
                             />
+                         
                         </label>
                         </Tooltip>
                     </div>
@@ -155,10 +160,24 @@ fileChangedHandler = (event) => {
 
                         <Menu
                             id="simple-menu"
+                            keepMounted
                             anchorEl={this.state.anchorEl}
                             onClose={this.handleClose}
-                            open={Boolean(this.state.anchorEl)} >
-                            <MenuItem onClick={() => { this.props.delete()}}>Delete Node</MenuItem>
+                            open={Boolean(this.state.anchorEl)}
+                        >
+                            <MenuItem onClick={() => {
+                                if (this.props.deleteNote === "deleteUpdate") {
+                                    this.props.delete()
+                                    this.handleClose()
+                                }
+                                else{
+                                    this.props.delete()
+                                    this.handleClose()
+                                   
+                                }
+                            }
+                            }
+                            >Delete Node</MenuItem>
                             <MenuItem >Add Label</MenuItem>
                             <MenuItem >Add Drawing</MenuItem>
                             <MenuItem >Make a Copy</MenuItem>
@@ -179,7 +198,6 @@ fileChangedHandler = (event) => {
                     getDetails ={this.props.getClose}
                     getNotes={() =>  this.props.get } />
             </div>
-            
         );
     }
 }
